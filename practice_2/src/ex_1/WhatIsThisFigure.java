@@ -1,8 +1,7 @@
 package ex_1;
 
-public class WhatIsThisFigure extends Shape {
-    public WhatIsThisFigure (int sides) {
-        Description(sides);
+public class WhatIsThisFigure {
+    public void GetResult() {
         System.out.println(toString());
     }
 }
