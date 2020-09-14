@@ -6,15 +6,12 @@ public class RandomBook {
     int number, pages;
     String size, author, name;
 
-    public String Pages() {
+    public RandomBook() {
         pages = 1 + (int)(Math.random() * 1500);
         if (pages <= 50) size = "short";
         else if (pages < 150) size = "not very long";
         else size = "long";
-        return size;
-    }
 
-    public String Author() {
         number = 1 + (int)(Math.random() * 3);
         switch (number) {
             case 1:
@@ -27,10 +24,7 @@ public class RandomBook {
                 author = "I. A. Bunin";
                 break;
         }
-        return author;
-    }
 
-    public String Name() {
         if (author.equals("A. P. Chekhov")) {
             if (pages <= 50) name = "The Champagne";
             else if (pages < 150) name = "Kashtanka";
@@ -46,13 +40,9 @@ public class RandomBook {
             else if (pages < 150) name = "The Gentleman from San Francisco";
             else name = "Light Breathing";
         }
-        return name;
     }
 
     public String toString() {
-        Pages();
-        Author();
-        Name();
         return MessageFormat.format("I recommend you to read one {0} book by {1} - {2}", size, author, name);
     }
 }
