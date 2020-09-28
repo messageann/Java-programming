@@ -1,4 +1,4 @@
-package ex_4;
+package ex_2;
 
 public class Rectangle  extends Shape{
     protected double width;

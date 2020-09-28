@@ -1,4 +1,4 @@
-package ex_4;
+package ex_2;
 
 public abstract class Shape {
     protected String color;
