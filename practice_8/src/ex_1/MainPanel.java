@@ -14,7 +14,7 @@ public class MainPanel extends JPanel {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(500,500);
+        return new Dimension(700,700);
     }
 
     public void ShowRandomShapes(Graphics g){
