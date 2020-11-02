@@ -24,7 +24,8 @@ public class Main {
         System.out.println("Index of banana phone is " + test_copy.indexOf("banana phone"));
         System.out.println("Last index of ring is " + test_copy.lastIndexOf("ring"));
 
-        test_copy.remove(1);
+        test_copy.remove("bring");
+        test_copy.remove(2);
         System.out.println("\nAfter removal:\n" + test_copy.toString());
     }
 }

@@ -93,6 +93,15 @@ public class myArrayList<Template> {
         arr = temp;
     }
 
+    public void remove (Template e) {
+        int i = 0;
+        size--;
+        Object[] temp = new Object[size];
+        for (; i<size && arr[i] != e; i++) temp[i] = arr[i];
+        for (i++; i<size+1; i++) temp[i-1] = arr[i];
+        arr = temp;
+    }
+
     @Override
     public String toString() {
         if (size == 0) return "[]";
