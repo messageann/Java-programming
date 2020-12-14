@@ -1,3 +1,9 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         InternetOrder order = new InternetOrder();
@@ -16,5 +22,22 @@ public class Main {
         MenuItem[] menu = new MenuItem[] {menuItem1, menuItem2};
         for (var t : menu) System.out.println(t.toString());
         System.out.println("Total for order: " + ordersManager.ordersCostSummary());
+
+        try (FileWriter fileWriter = new FileWriter("temp.txt", false)) {
+            fileWriter.write(pos1.toString());
+        } catch (IOException e) {
+            e.getMessage();
+        }
+
+        try (FileReader fileReader = new FileReader("temp.txt")) {
+            Scanner scan = new Scanner(fileReader);
+            while (scan.hasNextLine()) {
+                System.out.println(scan.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.getMessage();
+        } catch (IOException e) {
+            e.getMessage();
+        }
     }
 }
