@@ -14,7 +14,6 @@ public class ex_1 {
                 if (f1.getKey().equals(f2.getKey())) continue;
                 if (f1.getValue().equals(f2.getValue())) keysToRemove.add(f2.getKey());
             }
-            ;
         }
         keysToRemove.forEach(list::remove);
 
