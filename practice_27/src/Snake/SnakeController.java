@@ -7,14 +7,14 @@ import java.awt.event.KeyListener;
 import javax.swing.Timer;
 
 public class SnakeController implements KeyListener, ActionListener {
-    private SnakeView gameView;
+    private SnakeView snakeView;
     private Timer mainTimer;
     private Snake snake;
 
     public SnakeController() {
         snake = new Snake();
-        gameView = new SnakeView(this);
-        this.gameView.addKeyListener(this);
+        snakeView = new SnakeView(this);
+        this.snakeView.addKeyListener(this);
         this.mainTimer = new Timer(50, this);
         mainTimer.start();
     }
@@ -35,7 +35,7 @@ public class SnakeController implements KeyListener, ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent arg0) {
-        gameView.moveForward();
+        snakeView.moveForward();
     }
 
     public Snake getSnake() {

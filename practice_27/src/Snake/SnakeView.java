@@ -7,8 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class SnakeView extends JFrame {
-    private final int WIDTH = 500;
-    private final int HEIGHT = 500;
     public JButton[] ButtonBody = new JButton[200];
     private Snake snake;
     private SnakeController snakeController;
@@ -22,14 +20,14 @@ public class SnakeView extends JFrame {
         this.snakeController = snakeController;
         snake = snakeController.getSnake();
         fruit = new Fruit();
-        setBounds(200, 200, 500, 380);
+        setBounds(200, 200, 500, 500);
         panel1 = new JPanel();
         bonusfood = new JButton();
         bonusfood.setEnabled(false);
         bonusfood.setBackground(new Color(238, 0, 0));
         createFirstSnake();
         panel1.setLayout(null);
-        panel1.setBounds(0, 0, WIDTH, HEIGHT);
+        panel1.setBounds(0, 0, 500, 500);
         panel1.setBackground(new Color(238, 221, 130));
         getContentPane().setLayout(null);
         getContentPane().add(panel1);
@@ -69,11 +67,11 @@ public class SnakeView extends JFrame {
         for (int i = 1; i < snake.getLength(); i++) {
             ButtonBody[i].setLocation(snake.getPointBody()[i - 1]);
         }
-        if (snake.x[0] == WIDTH) {
+        if (snake.x[0] == 500) {
             snakeController.stopGame();
         } else if (snake.x[0] == 0) {
             snakeController.stopGame();
-        } else if (snake.y[0] == HEIGHT) {
+        } else if (snake.y[0] == 500) {
             snakeController.stopGame();
         } else if (snake.y[0] == 0) {
             snakeController.stopGame();
